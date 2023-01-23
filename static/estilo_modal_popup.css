@@ -1,0 +1,118 @@
+#mascara-pop-up, #mascara-pop-up1{
+	display: none;
+	background-color: rgba(0, 0, 0, .5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+#pop-up, #pop-up1{
+	/*display: none;*/
+	padding: 20px:;
+	height: 500px;
+	background-color: white;
+	position: relative;
+	width: 500px;
+	margin: 10% auto;
+	border-radius: 5px;
+}
+
+#pop-up-close, #pop-up-close1{
+	/*text-align: right;*/
+	cursor: pointer;
+	font-size: 22px;
+	display: inline-block;
+	float: right;
+	color: solid rgba(0, 0, 0, 0.2);
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+#conteudo-pop-up1, #conteudo-pop-up{
+    font-size: 22px;
+    margin-left: 30px;
+}
+
+#conteudo-pop-up1 > h2, #conteudo-pop-up > h2{
+    padding: 15px;
+}
+
+
+#conteudo-pop-up1 > form > .conteudo_form > input, #conteudo-pop-up1 > form > .conteudo_form > select{
+    padding: 5px;
+	border-radius: 5px;
+	border: 0.5px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 90%;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#conteudo-pop-up1 > form > .conteudo_form > select{
+    width: 40%;
+}
+
+
+#conteudo-pop-up1 > form > input[type=submit]{
+    background-color: blue;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 20%;
+    margin-left: 73%;
+    margin-top: 2%;
+}
+
+
+#conteudo-pop-up > form > .conteudo_form > input, #conteudo-pop-up > form > .conteudo_form > select{
+    padding: 5px;
+	border-radius: 5px;
+	border: 0.5px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 90%;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#conteudo-pop-up > form > .conteudo_form > select{
+    width: 40%;
+}
+
+
+#conteudo-pop-up > form > input[type=submit]{
+    background-color: blue;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 20%;
+    margin-left: 73%;
+    margin-top: 2%;
+}
+
+
+
+.conteudo_form{
+    margin-top: 20px;
+    padding-bottom: 25%;
+
+}
+
+.conteudo_form_cria_filial{
+    padding-bottom: 40%;
+
+}
+
+.conteudo_form_cria_empresa{
+    padding-bottom: 30%;
+
+}
+
+hr{
+    margin-left:-30px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+}
+
+

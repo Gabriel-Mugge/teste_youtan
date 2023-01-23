@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ACME</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilo.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='estilo_modal_popup.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+
+	<header>
+
+		<nav>
+			<ul>
+				<li><a class="home" href="#">ACME</a></li>
+				<li><a href="#">Dashboards</a></li>
+				<li><a class="clientes" href="#">Clientes</a></li>
+			</ul>
+		</nav>
+
+		<a class="menu-opcoes" href="#">Fulano da Silava</a>
+		
+	</header>
+
+
+	<main>
+
+		<div class="position-novo">
+
+			<a class="novo" href="#">Novo</a>
+
+		</div>
+
+		<div class="tabela-principal"> 
+			<table>
+				<col class="coluna-empresa">
+				<col class="coluna-situacao">
+				<col class="coluna-editar">
+				<tbody>
+
+					{{tabela_empresas|safe}}
+
+				</tbody>
+			</table>
+		</div>
+
+
+	</main>
+
+	<div id="mascara-pop-up">
+		<div id="pop-up">
+			<div id="pop-up-close">x</div>
+			<div id="conteudo-pop-up">
+                <h2>Cadastrar Empresa</h2>
+                <hr>
+
+				<form id='form_nova_empresa' method="post" action=" {{url_for('cadastrar_empresa')}}">
+
+                    <div class="conteudo_form conteudo_form_cria_empresa">
+
+                        {{ form.cnpj_empresa.label() }}
+                        {{ form.cnpj_empresa(onkeypress="mascaraCNPJ(this)", maxlength="18") }}
+                        <br>
+
+                        {{ form.nome_empresa.label() }}
+                        {{ form.nome_empresa() }}
+                        <br>
+
+                        {{ form.situacao_empresa.label() }}
+                        {{ form.situacao_empresa() }}
+                        <br>
+
+                    </div>
+                    <hr>
+                    {{ form.cadastrar() }}
+
+
+                    {{ form.csrf_token() }}
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<footer>
+		<p>Todos os diretos reservados ACME</p>
+	</footer>
+
+	<script  type="text/javascript" src="{{ url_for('static', filename='comportamento_modal.js') }}"></script>
+    <script  type="text/javascript" src="{{ url_for('static', filename='mascaras_inputs.js') }}"></script>
+
+</body>
+</html>

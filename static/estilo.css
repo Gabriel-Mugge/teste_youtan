@@ -1,0 +1,280 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+body{
+	background-color: rgb(235, 235, 235);
+}
+
+
+header{
+	background-color: green;
+	padding: 20px;
+}
+
+nav {
+	display: inline-block;
+}
+
+
+li {
+	text-decoration: none;
+	display: inline-block;
+	margin-right: 80px;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+li > a:hover {
+	cursor: pointer;
+}
+
+.home{
+	font-size: 2em;
+}
+
+.menu-opcoes{
+	display: inline-block;
+	float: right;
+	margin-top: 10px;
+
+}
+
+.clientes{
+	color:rgba(255,255,255,0.7);
+}
+
+
+main{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+
+.position-novo{
+	text-align: right;
+	position: relative;
+	display: block;
+	top: 80px;
+	/*toda a tela - (primeira coluna + duas ultimas colunas + pading da 
+	tabela + pading dos tds) = margens laterais*/
+	right: calc((100vw - 80.1vw)/2);
+}
+
+.novo{
+	background-color: blue; 
+	padding: 10px;
+}
+
+
+table{
+	border-collapse: collapse;
+	margin: auto;
+	background-color: white;
+	
+
+}
+
+.tabela-principal{
+	margin: auto;
+	margin-top: 100px;
+	padding: 25px;
+	background-color: white;
+	width: 75vw;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+tr{
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.editar_in_table{
+    color: black;
+    border: 1px solid blue;
+    padding: 5px;
+    border-radius: 5px;
+    color: blue;
+}
+
+.material-icons{
+    position: relative;
+    top: 5px;
+    color: blue;
+}
+
+
+
+tr:last-child{
+	border-bottom: none;
+}
+
+
+.coluna-empresa{
+	width: 60vw;
+}
+
+
+.coluna-situacao{
+	width: 80px;
+}
+
+
+.coluna-editar, .coluna-excluir{
+	width: 18%;
+}
+
+
+td{
+	padding: 20px;
+}
+
+.ativo, .inativo{
+	border-radius: 30px;
+	padding: 5px;
+	color: white;
+}
+
+.inativo{
+	background-color: silver;
+}
+
+.ativo{
+	background-color: green;
+}
+
+
+/*Página de novo inicio*/
+.position-novo-pg-novo{
+	width: 100%;
+	background-color: rgb(230, 230, 230);
+	padding: 10px;
+	padding-left: 30px;
+	margin-top: -20px;
+	margin-left: -20px;
+	border-radius: 5px 5px 0px 0px;
+	text-align: right;
+	display: block;
+}
+
+
+.coluna-empresa-pg-novo{
+	width: 15vw;
+}
+
+
+section{
+    display: flex;
+	width: 80vw;
+	margin: auto;
+	margin-top: 100px;
+	position: relative;
+}
+
+.botoes_empresa_pg_novo{
+    position: relative;
+    top: 10vh;
+    /*bottom: -25%*/;
+    display: block;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+
+.salvar{
+    position: absolute;
+  	background-color: blue;
+	padding: 10px;
+	right: 0%;
+	top: -50%;
+
+}
+
+.excluir{
+  	background-color: tranparense;
+  	color: red;
+  	border: 1px solid red;
+	padding: 10px;
+}
+
+.excluir_in_table, .editar_in_table{
+    color: black;
+    border: 1px solid blue;
+    padding: 5px;
+    border-radius: 5px;
+    color: blue;
+}
+
+.material-icons{
+    position: relative;
+    top: 5px;
+    color: blue;
+}
+
+.descricao{
+	display: inline-block;
+	width: 20%;
+}
+
+
+
+.conteudo{
+	background-color: white;
+	padding: 20px;
+	margin-left: 5%;
+	display: inline-block;
+	width: 70%;
+	align-items: top;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.labels{
+	display: block;
+}
+
+#nome_empresa{
+	width: 70%;
+	padding: 5px;
+	border-radius: 5px;
+	border: 0.5px solid rgba(0, 0, 0, 0.1);
+
+}
+
+#situacao_empresa{
+	margin-left: 20px;
+	width: 20%;
+	padding: 5px;
+	border-radius: 5px;
+	border: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+/*Página de novo fim*/
+
+
+footer{
+	background-color: green;
+	padding: 10px;
+	margin-top: calc(100vh + 100px);
+	text-align: center;
+	color: white;
+}
+
+
+@media (max-width: 900px){
+	.conteudo{
+
+		width: 600px;
+
+	}
+
+	footer{
+        margin-top: calc(100vh + 230px);
+    }
+}

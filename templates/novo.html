@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ACME</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilo.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='estilo_modal_popup.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+
+	<header>
+
+		<nav>
+			<ul>
+				<li><a class="home" href="{{ url_for('index') }}">ACME</a></li>
+				<li><a href="#">Dashboards</a></li>
+				<li><a class="clientes" href="#">Clientes</a></li>
+			</ul>
+		</nav>
+
+		<a class="menu-opcoes" href="#">Fulano da Silava</a>
+		
+	</header>
+
+	<main>
+
+		<section> 
+			<div class="descricao"> 
+				<h1>Dados Cadastrais</h1>
+				<p>Informações cadastrais da empresa cliente</p>
+			</div>
+
+
+			<div class="conteudo"> 
+				<form id="form_edit_empresa" action="{{ url_for('atualizar_empresa', cnpj_empresa=cnpj_empresa) }}" method="post">
+
+					<div class="labels">
+						{{ form_empresa.nome_empresa.label() }}
+						<label style="margin-left: 69%">Ativo</label>
+					</div>
+
+        			{{ form_empresa.nome_empresa() }}
+
+        			{{ form_empresa.situacao_empresa() }}
+
+					{{ form_empresa.csrf_token() }}
+
+				</form>
+			</div>
+
+		</section>
+
+
+	
+		<section> 
+
+			<div class="descricao"> 
+				<h1>CNPJs</h1>
+				<p>Cadastro de CNPJs associados a empresa cliente. Arquivos
+				serão relacionados ao CNPJ durante o upload</p>
+			</div>
+
+
+
+			<div class="conteudo"> 
+				<div class="position-novo-pg-novo">
+					<a class="novo" href="#">Novo</a>
+				</div>
+
+				<table>
+					<col class="coluna-cnpj">
+					<col class="coluna-empresa-pg-novo">
+					<col class="coluna-situacao">
+					<col class="coluna-editar">
+                    <col class="coluna-excluir">
+					<tbody>
+
+						{{ tabela_filiais|safe }}
+
+					</tbody>
+				</table>
+
+                <div class="botoes_empresa_pg_novo">
+					<a class="excluir" href="{{ url_for('deletar_empresa', cnpj_empresa=cnpj_empresa) }}">Excluir</a>
+					<a class="salvar" onclick="submitForm_empresa()" href="#">Salvar</a>
+				</div>
+
+			</div>
+
+		</section>
+
+	</main>
+
+
+	<div id="mascara-pop-up">
+		<div id="pop-up">
+			<div id="pop-up-close">x</div>
+			<div id="conteudo-pop-up">
+
+                <h2>Cadastrar Filial</h2>
+                <hr>
+
+				<form id='form_nova_filial' method="post" action=" {{url_for('cadastrar_filial', cnpj_empresa=cnpj_empresa)}}">
+
+                    <div class="conteudo_form conteudo_form_cria_filial">
+                        {{ form_filial.nome_filial.label() }}<br>
+                        {{ form_filial.nome_filial() }}
+                        <br>
+
+                        {{ form_filial.situacao_filial.label() }}<br>
+                        {{ form_filial.situacao_filial() }}
+                        <br>
+
+
+                    </div>
+
+                    <hr>
+                    {{ form_filial.cadastrar() }}
+					{{ form_filial.csrf_token() }}
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="mascara-pop-up1">
+		<div id="pop-up1">
+			<div id="pop-up-close1">x</div>
+			<div id="conteudo-pop-up1">
+
+                <h2>Editando CNPJ</h2>
+                <hr>
+
+				<form id='form_editar_filial' method="post" action="#">
+                    <div class="conteudo_form">
+                        <input class="edit_id_filial" type="hidden">
+
+                        {{ form_filial.situacao_filial.label() }}<br>
+                        {{ form_filial.situacao_filial(class_="edit_situacao_filial") }}
+                        <br>
+
+                        <label for="cnpj_empresa">CNPJ</label><br>
+                        <input class="edit_cnpj_filial" id="cnpj_empresa" type="text" disabled="">
+                        <br>
+
+                        {{ form_filial.nome_filial.label() }}<br>
+                        {{ form_filial.nome_filial(class_="edit_nome_filial") }}
+                        <br>
+
+                    </div>
+                    <hr>
+					{{ form_filial.cadastrar() }}
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<footer>
+		<p>Todos os diretos reservados ACME</p>
+	</footer>
+
+	<script  type="text/javascript" src="{{ url_for('static', filename='comportamento_modal.js') }}"></script>
+	<script  type="text/javascript" src="{{ url_for('static', filename='comportamento.js') }}"></script>
+
+
+</body>
+</html>
